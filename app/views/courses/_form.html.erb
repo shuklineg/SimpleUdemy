@@ -1,0 +1,36 @@
+<%= form_with(model: course) do |form| %>
+  <% if course.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(course.errors.count, "error") %> prohibited this course from being saved:</h2>
+
+      <ul>
+        <% course.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="input-group mb-3">
+    <%= form.text_field :image, placeholder: 'Изображение', class: 'form-control' %>
+  </div>
+
+  <div class="input-group mb-3">
+    <%= form.text_field :video, placeholder: 'Видео', class: 'form-control' %>
+  </div>
+
+  <div class="input-group mb-3">
+    <%= form.text_field :title, placeholder: 'Заголовок', class: 'form-control' %>
+  </div>
+
+  <div class="input-group mb-3">
+    <%= form.number_field :star, placeholder: 'Оценка', class: 'form-control' %>
+  </div>
+
+  <div class="input-group mb-3">
+    <%= form.text_area :description, placeholder: 'Описание', length: 800, class: 'form-control' %>
+  </div>
+
+  <%= form.submit 'Сохранить', class: 'btn btn-primary' %>
+  <%= link_to 'Открыть все курсы', courses_path, class: 'btn btn-secondary' %>
+<% end %>

@@ -17,10 +17,10 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <%= link_to 'Udemo', '#', class: 'navbar-brand' %>
+          <%= link_to 'Udemo', root_path, class: 'navbar-brand' %>
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Курсы</a>
+              <%= link_to 'Курсы', courses_path, class: 'nav-link' %>
             </li>
             <li class="nav-item">
               <%= link_to 'О проекте', pages_about_path, class: 'nav-link' %>
