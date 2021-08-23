@@ -31,6 +31,11 @@
     <%= form.text_area :description, placeholder: 'Описание', length: 800, class: 'form-control' %>
   </div>
 
+  <div class="input-group mb-3">
+    <%= form.check_box :public, id: :public,class: 'form-check-input' %>
+    <label for='public' class='form-check-label'>Опубликовать</label>
+  </div>
+
   <%= form.submit 'Сохранить', class: 'btn btn-primary' %>
   <%= link_to 'Открыть все курсы', courses_path, class: 'btn btn-secondary' %>
 <% end %>
